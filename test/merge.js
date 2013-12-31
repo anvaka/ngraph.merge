@@ -35,6 +35,16 @@ test('goes deep', function (t) {
   t.end();
 });
 
+test('goes deep avoids conflicts', function (t) {
+  var options = { age: 42, user: {firstName: 'John'} };
+  merge(options, { user : { lastName : 'Smith'} });
+
+  t.equals(options.age, 42);
+  t.equals(options.user.firstName, 'John');
+  t.equals(options.user.lastName, 'Smith');
+  t.end();
+});
+
 test('Initializes with default object', function (t) {
   var options = { age: '42' };
   var result = merge(undefined, options);
@@ -47,6 +57,10 @@ test('Initializes with default object', function (t) {
 });
 
 test('Do not copy prototype', function (t) {
+  function Options() { this.age = 42; }
+  Options.prototype.foo = 'foo';
+
+  debugger;
   var options = new Options();
   var result = merge({}, options);
   t.equals(result.age, 42);
@@ -54,7 +68,5 @@ test('Do not copy prototype', function (t) {
 
   t.end();
 
-  function Options() { this.age = 42; }
-  Options.prototype.foo = 'foo';
 });
 
