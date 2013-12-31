@@ -3,6 +3,7 @@
 Simple merge utility to extend objects without extra dependencies. This utility
 may be useful when you want to quickly provide optional settings
 
+[![build status](https://secure.travis-ci.org/anvaka/ngraph.merge.png)](http://travis-ci.org/anvaka/ngraph.merge)
 # usage
 
 ``` js
