@@ -19,7 +19,7 @@ may be useful when you want to quickly provide optional settings
   console.log(options.age); // '100'. Type mismatch. Age is overwritten
 ```
 
-For more examples please refer to `test` folder
+For more examples please refer to [tests](https://github.com/anvaka/ngraph.merge/blob/master/test/merge.js).
 
 # why?
 I want to control dependencies chain and not pull too many external libraries
