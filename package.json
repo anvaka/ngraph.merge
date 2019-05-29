@@ -1,6 +1,6 @@
 {
   "name": "ngraph.merge",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple merge utility to extend objects without extra dependencies",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
     "url": "https://github.com/anvaka/ngraph.merge"
   },
   "devDependencies": {
-    "tap": "~0.4.6"
+    "tap": "^14.2.0"
   }
 }
