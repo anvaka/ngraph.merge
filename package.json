@@ -17,6 +17,6 @@
     "url": "https://github.com/anvaka/ngraph.merge"
   },
   "devDependencies": {
-    "tap": "^14.2.0"
+    "tap": "^16.2.0"
   }
 }

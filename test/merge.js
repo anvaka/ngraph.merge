@@ -9,7 +9,7 @@ test('Should not touch properties when types match', function(t) {
     age: 24
   });
 
-  t.equals(options.age, 42);
+  t.equal(options.age, 42);
   t.end();
 });
 
@@ -21,7 +21,7 @@ test('Should extend, because types are different', function(t) {
     age: 24
   });
 
-  t.equals(options.age, 24);
+  t.equal(options.age, 24);
   t.end();
 });
 
@@ -33,8 +33,8 @@ test('Should augment with new properties', function(t) {
     newproperty: 24
   });
 
-  t.equals(options.age, 42);
-  t.equals(options.newproperty, 24);
+  t.equal(options.age, 42);
+  t.equal(options.newproperty, 24);
   t.end();
 });
 
@@ -48,8 +48,8 @@ test('goes deep', function(t) {
     }
   });
 
-  t.equals(options.age, 42);
-  t.equals(options.nested.name, 'deep');
+  t.equal(options.age, 42);
+  t.equal(options.nested.name, 'deep');
   t.end();
 });
 
@@ -66,9 +66,9 @@ test('goes deep avoids conflicts', function(t) {
     }
   });
 
-  t.equals(options.age, 42);
-  t.equals(options.user.firstName, 'John');
-  t.equals(options.user.lastName, 'Smith');
+  t.equal(options.age, 42);
+  t.equal(options.user.firstName, 'John');
+  t.equal(options.user.lastName, 'Smith');
   t.end();
 });
 
@@ -77,10 +77,10 @@ test('Initializes with default object', function(t) {
     age: '42'
   };
   var result = merge(undefined, options);
-  t.deepEqual(result, options);
+  t.same(result, options);
 
   var onlyOptions = merge(options);
-  t.deepEqual(onlyOptions, options);
+  t.same(onlyOptions, options);
 
   t.end();
 });
@@ -93,7 +93,7 @@ test('Do not copy prototype', function(t) {
 
   var options = new Options();
   var result = merge({}, options);
-  t.equals(result.age, 42);
+  t.equal(result.age, 42);
   t.ok(result.foo === undefined);
 
   t.end();
